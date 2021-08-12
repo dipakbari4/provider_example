@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_example/counter.dart';
+import 'package:provider_example/result.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -38,6 +39,12 @@ class MyHomePage extends StatelessWidget {
               'You have pushed the button this many times:',
             ),
             Count(),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const ResultPage()));
+                },
+                child: Text('Save'))
           ],
         ),
       ),
